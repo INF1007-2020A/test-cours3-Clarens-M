@@ -1,8 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+nom = str(input("Écrire le nom d'un pays: "))
 def capitaliser_pays(nom):
     # TODO completer la fonction
-    return nom
+    n = 1
+    liste = [nom[i:i+n] for i in range(0, len(nom), n)]
+    for i in range(0, len(nom), 1):
+        if ord(liste[i]) > 96 and ord(liste[i]) < 123:
+             cap = chr(ord(liste[i]) - 32)
+             liste[i] = cap
+    NOM = ''.join(liste)
+    print(NOM)
 
 
 if __name__ == '__main__':
